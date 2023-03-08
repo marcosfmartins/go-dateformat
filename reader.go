@@ -44,7 +44,6 @@ func isLetter(ch byte) bool {
 }
 
 func isPrefix(ch byte) bool {
-
 	if ch == '-' || ch == ':' || isNumber(ch) {
 		return true
 	}
