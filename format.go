@@ -44,6 +44,7 @@ const (
 	TimezoneHHMM          = prefix + "z"
 	TimezoneWithColonHHMM = prefix + ":z"
 
+	dayYearSize      = 3
 	longYearSize     = 4
 	monthSize        = 2
 	daySize          = 2
@@ -116,7 +117,7 @@ func Format(date time.Time, format string) string {
 		case ShortWeekDayName:
 			_, _ = result.WriteString(getShortName(date.Weekday().String()))
 		case DayYear:
-			_, _ = result.WriteIntPrefix(date.YearDay(), 3)
+			_, _ = result.WriteIntPrefix(date.YearDay(), dayYearSize)
 		case TrimDayYear:
 			_ = result.WriteInt(date.YearDay())
 		case WeekNumber:

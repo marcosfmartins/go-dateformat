@@ -4,8 +4,6 @@
 name: Go
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -21,8 +19,11 @@ jobs:
       with:
         go-version: 1.19
 
+    - name: install deps
+      run: go mod tidy
+
     - name: Test
       run: go test -v ./...
-      
+
     - name: golangci-lint
       uses: golangci/golangci-lint-action@v3
