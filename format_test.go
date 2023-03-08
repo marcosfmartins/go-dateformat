@@ -9,6 +9,9 @@ import (
 func TestDateFormat(t *testing.T) {
 	datetime := time.Now()
 
+	DateOnly := "2006-01-02"
+	TimeOnly := "15:04:05"
+
 	models := []struct {
 		Name     string
 		Expected string
@@ -101,12 +104,13 @@ func TestDateFormat(t *testing.T) {
 		},
 		{
 			Name:     "DateOnly",
-			Expected: time.DateOnly,
+			Expected: DateOnly,
 			ToTest:   "%Y-%m-%d",
 		},
 		{
+
 			Name:     "TimeOnly",
-			Expected: time.TimeOnly,
+			Expected: TimeOnly,
 			ToTest:   "%H:%M:%S",
 		},
 		{
