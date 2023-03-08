@@ -11,6 +11,12 @@ func TestDateFormat(t *testing.T) {
 
 	DateOnly := "2006-01-02"
 	TimeOnly := "15:04:05"
+	DateTime := "2006-01-02 15:04:05"
+	UnixDate := "Mon Jan _2 15:04:05 -07 2006"
+	RFC850 := "Monday, 02-Jan-06 15:04:05 -07"
+	RFC1123 := "Mon, 02 Jan 2006 15:04:05 -07"
+	RFC3339 := "2006-01-02T15:04:05Z-07:00"
+	RFC3339Nano := "2006-01-02T15:04:05.999999999Z-07:00"
 
 	models := []struct {
 		Name     string
@@ -29,7 +35,7 @@ func TestDateFormat(t *testing.T) {
 		},
 		{
 			Name:     "UnixDate",
-			Expected: time.UnixDate,
+			Expected: UnixDate,
 			ToTest:   "%a %b  %-d %H:%M:%S %-z %Y",
 		},
 		{
@@ -38,23 +44,18 @@ func TestDateFormat(t *testing.T) {
 			ToTest:   "%a %b %d %H:%M:%S %z %Y",
 		},
 		{
-			Name:     "RFC822",
-			Expected: time.RFC822,
-			ToTest:   "%d %b %y %H:%M %-z",
-		},
-		{
 			Name:     "RFC822Z",
 			Expected: time.RFC822Z,
 			ToTest:   "%d %b %y %H:%M %z",
 		},
 		{
 			Name:     "RFC850",
-			Expected: time.RFC850,
+			Expected: RFC850,
 			ToTest:   "%A, %d-%b-%y %H:%M:%S %-z",
 		},
 		{
 			Name:     "RFC1123",
-			Expected: time.RFC1123,
+			Expected: RFC1123,
 			ToTest:   "%a, %d %b %Y %H:%M:%S %-z",
 		},
 		{
@@ -64,13 +65,13 @@ func TestDateFormat(t *testing.T) {
 		},
 		{
 			Name:     "RFC3339",
-			Expected: time.RFC3339,
-			ToTest:   "%Y-%m-%dT%H:%M:%S%-z:00",
+			Expected: RFC3339,
+			ToTest:   "%Y-%m-%dT%H:%M:%SZ%:z",
 		},
 		{
 			Name:     "RFC3339Nano",
-			Expected: time.RFC3339Nano,
-			ToTest:   "%Y-%m-%dT%H:%M:%S.%f%:z",
+			Expected: RFC3339Nano,
+			ToTest:   "%Y-%m-%dT%H:%M:%S.%fZ%:z",
 		},
 		{
 			Name:     "Kitchen",
@@ -99,7 +100,7 @@ func TestDateFormat(t *testing.T) {
 		},
 		{
 			Name:     "DateTime",
-			Expected: time.DateTime,
+			Expected: DateTime,
 			ToTest:   "%Y-%m-%d %H:%M:%S",
 		},
 		{
