@@ -17,7 +17,7 @@ func TestDateFormat(t *testing.T) {
 		{
 			Name:     "Layout",
 			Expected: time.Layout,
-			ToTest:   "%m/%d %l:%M:%S%p '%y %z",
+			ToTest:   "%m/%d %l:%M:%S%P '%y %z",
 		},
 		{
 			Name:     "ANSIC",
@@ -72,7 +72,7 @@ func TestDateFormat(t *testing.T) {
 		{
 			Name:     "Kitchen",
 			Expected: time.Kitchen,
-			ToTest:   "%-l:%M%p",
+			ToTest:   "%-l:%M%P",
 		},
 		{
 			Name:     "Stamp",
