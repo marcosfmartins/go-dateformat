@@ -1,0 +1,29 @@
+run:
+  concurrency: 4
+  tests: false
+  skip-files:
+    - ".*_mock\\.go$"
+
+linters:
+  disable-all: true
+  enable:
+    - unused
+    - errcheck
+    - govet
+    - staticcheck
+    - bodyclose
+    - gocyclo
+    - dogsled
+    - dupl
+    - exportloopref
+    - gocognit
+    - goconst
+    - gofmt
+    - gomnd
+    - gosec
+    - tagliatelle
+    - whitespace
+    - depguard
+    - gosimple
+    - stylecheck
+    - unconvert
